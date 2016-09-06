@@ -11,6 +11,9 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'GuestController@index');
+Route::get('/list/{name}', 'GuestController@wishList');
+
+Route::get('family', ['as' => 'family', 'uses' => 'FamilyController@index']);
+
+Route::get('test', 'GuestController@test');
