@@ -45,6 +45,6 @@ class GuestController extends Controller
 
     public function test()
     {
-        return 'Test!';
+        return view('test');
     }
 }
