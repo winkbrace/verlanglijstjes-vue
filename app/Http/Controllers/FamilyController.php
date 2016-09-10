@@ -9,7 +9,7 @@ class FamilyController extends Controller
 {
     /*
     |--------------------------------------------------------------------------
-    | Admin Controller
+    | Family Controller
     |--------------------------------------------------------------------------
     |
     | This controller renders the views that are available for
@@ -24,8 +24,6 @@ class FamilyController extends Controller
 
     public function index()
     {
-        $members = User::all(['id', 'name', 'rank', 'order'])->sortBy('order');
-
-        return view('home')->with(compact('members'));
+        return view('home');
     }
 }
