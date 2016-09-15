@@ -13,7 +13,7 @@ require('./bootstrap');
  * the application, or feel free to tweak this setup for your needs.
  */
 
-Vue.component('example', require('./components/Example.vue'));
+Vue.component('member-list', require('./components/member-list.vue'));
 
 const app = new Vue({
     el: 'body'

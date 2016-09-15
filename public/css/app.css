@@ -1,5 +1,5 @@
 @charset "UTF-8";
-@import url(https://fonts.googleapis.com/css?family=Raleway:300,400,600);
+@import url(https://fonts.googleapis.com/css?family=Roboto:300,400,600);
 /*!
  * Bootstrap v3.3.7 (http://getbootstrap.com)
  * Copyright 2011-2016 Twitter, Inc.
@@ -5765,5 +5765,140 @@ button.close {
 @media print {
   .hidden-print {
     display: none !important; } }
+
+header {
+  height: 150px;
+  position: relative; }
+
+ul.head-nav li {
+  width: 100px;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: 0 auto; }
+
+/* buttons */
+ul.list-group li.list-group-item.btn {
+  background-color: transparent; }
+
+.blue {
+  background: #2196f3; }
+
+.green {
+  background: #4caf50; }
+
+.orange {
+  background: #ff9800; }
+
+.red {
+  background: #f44336; }
+
+.pink {
+  background: #e91e63; }
+
+.dblue {
+  background: #1976d2; }
+
+.btn,
+button {
+  display: block;
+  float: left;
+  border: none;
+  font-size: 16px; }
+
+.btn :hover,
+button :hover {
+  background: #1976d2;
+  text-decoration: none;
+  color: #ffffff; }
+
+.btn:hover,
+button:hover {
+  cursor: pointer; }
+
+button:hover {
+  color: #1976d2; }
+
+.btn-main {
+  display: block;
+  width: 100px;
+  height: 100px;
+  line-height: 90px;
+  border-radius: 50%;
+  color: #ffffff;
+  text-align: center;
+  text-decoration: none;
+  font-weight: bold;
+  box-shadow: 2px 2px 6px #CCCCCC;
+  text-shadow: 0 1px 0 #064475; }
+
+.btn-add {
+  position: absolute;
+  bottom: 56px;
+  right: 56px; }
+
+.btn-add .fa {
+  font-size: 40px; }
+
+.btn-add span {
+  position: absolute;
+  bottom: 18px;
+  left: 24px;
+  color: #ffffff; }
+
+.btn-home {
+  position: absolute;
+  bottom: 56px;
+  left: 56px; }
+
+.btn-home .fa {
+  font-size: 40px; }
+
+.btn-home span {
+  position: absolute;
+  bottom: 18px;
+  left: 31px;
+  color: #ffffff; }
+
+.btn-login {
+  position: relative; }
+
+.btn-login .fa {
+  font-size: 40px; }
+
+.btn-login span {
+  position: absolute;
+  bottom: 28px;
+  left: 33px;
+  color: #ffffff; }
+
+/*gifts */
+.gifts {
+  color: #057aa6;
+  font-weight: bold;
+  font-size: 16px; }
+
+.gifts li {
+  padding: 28px 80px;
+  min-height: 80px; }
+
+.gifts li a {
+  position: absolute;
+  left: 10px;
+  top: 28px;
+  /* padding-top from .gift */
+  color: #ffc533; }
+
+/* --------------------------------------------------------- Desktop bigger than 800 */
+@media screen and (min-width: 800px) {
+  .content {
+    margin: 0 auto;
+    float: none;
+    width: 800px; }
+  .btn-main {
+    width: 160px;
+    height: 160px;
+    line-height: 160px;
+    font-size: 24px; } }
 
 /*# sourceMappingURL=app.css.map */

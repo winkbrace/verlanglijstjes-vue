@@ -17,4 +17,6 @@ Route::get('/user', function (Request $request) {
     return $request->user();
 })->middleware('auth:api');
 
-Route::get('/members', 'Api\MemberController@members');
+Route::get('/members', 'ApiController@members');
+
+Route::get('/list/{name}', 'ApiController@wishList');
