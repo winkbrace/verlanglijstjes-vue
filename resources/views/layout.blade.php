@@ -24,21 +24,7 @@
         @yield('content')
 	</section>
 
-	<footer>
-	    @if (URL::current() != url('/'))
-        <div class="btn-home"> <span>Home</span>
-            <a class="btn btn-main green" href="{{ url('/') }}"><i class="fa fa-home"></i></a>
-        </div>
-        @endif
-
-        @if ($isCurrentUserWishList)
-        <div class="btn-add"><span>Cadeau</span>
-            <a class="btn btn-main pink"><i class="fa fa-plus"></i></a>
-        </div>
-
-        <logout-bar/>
-        @endif
-    </footer>
+    <wishlist-footer atHomePage="{{ URL::current() != url('/') }}" isCurrentUserWishList="{{ $isCurrentUserWishList }}"></wishlist-footer>
 
     <script src="{{ asset('js/app.js') }}"></script>
 </body>

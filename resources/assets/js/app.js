@@ -17,6 +17,7 @@ Vue.component('member-list', require('./components/member-list.vue'));
 Vue.component('wish-list', require('./components/wish-list.vue'));
 Vue.component('logout-bar', require('./components/logout-bar.vue'));
 Vue.component('wishlist-header', require('./components/wishlist-header.vue'));
+Vue.component('wishlist-footer', require('./components/wishlist-footer.vue'));
 
 const app = new Vue({
     el: 'body'
