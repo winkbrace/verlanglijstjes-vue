@@ -3,6 +3,7 @@
 namespace App\Http\Middleware;
 
 use Closure;
+use Verlanglijstjes\User;
 
 class SetViewVariables
 {
@@ -15,9 +16,11 @@ class SetViewVariables
      */
     public function handle($request, Closure $next)
     {
-        if (! empty($user = \Auth::user())) {
-            view()->share('username', $user->name);
-        }
+        /** @var User $user */
+        $user = \Auth::user();
+        view()->share('username', ! empty($user) ? $user->name : null);
+
+        view()->share('isCurrentUserWishList', false); // is set to true in WebController for current user
 
         return $next($request);
     }

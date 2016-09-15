@@ -11,7 +11,10 @@ class WebController extends Controller
 
     public function wishList($name)
     {
-        return view('list')->with(compact('name'));
+        return view('list')->with([
+            'name' => $name,
+            'isCurrentUserWishList' => ! empty($user = \Auth::user()) && $user->name == $name
+        ]);
     }
 
     public function test()

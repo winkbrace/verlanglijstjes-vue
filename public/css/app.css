@@ -5769,17 +5769,6 @@ button.close {
 header, footer {
   z-index: 3; }
 
-header {
-  height: 150px;
-  position: relative; }
-
-ul.head-nav li {
-  width: 100px;
-  position: absolute;
-  left: 0;
-  right: 0;
-  margin: 0 auto; }
-
 /* buttons */
 ul.list-group li.list-group-item.btn {
   background-color: transparent; }
@@ -5839,41 +5828,35 @@ button:hover {
   position: absolute;
   bottom: 56px;
   right: 56px; }
-
-.btn-add .fa {
-  font-size: 40px; }
-
-.btn-add span {
-  position: absolute;
-  bottom: 18px;
-  left: 24px;
-  color: #ffffff; }
+  .btn-add .fa {
+    font-size: 40px; }
+  .btn-add span {
+    position: absolute;
+    bottom: 18px;
+    left: 24px;
+    color: #ffffff; }
 
 .btn-home {
   position: absolute;
   bottom: 56px;
   left: 56px; }
-
-.btn-home .fa {
-  font-size: 40px; }
-
-.btn-home span {
-  position: absolute;
-  bottom: 18px;
-  left: 31px;
-  color: #ffffff; }
+  .btn-home .fa {
+    font-size: 40px; }
+  .btn-home span {
+    position: absolute;
+    bottom: 18px;
+    left: 31px;
+    color: #ffffff; }
 
 .btn-login {
   position: relative; }
-
-.btn-login .fa {
-  font-size: 40px; }
-
-.btn-login span {
-  position: absolute;
-  bottom: 28px;
-  left: 33px;
-  color: #ffffff; }
+  .btn-login .fa {
+    font-size: 40px; }
+  .btn-login span {
+    position: absolute;
+    bottom: 28px;
+    left: 33px;
+    color: #ffffff; }
 
 /* --------------------------------------------------------- Desktop bigger than 800 */
 @media screen and (min-width: 800px) {

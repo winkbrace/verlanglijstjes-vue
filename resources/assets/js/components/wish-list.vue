@@ -10,7 +10,7 @@
     </div>
 </template>
 
-<style type="text/css" lang="less" scoped>
+<style type="text/css" lang="sass" scoped>
     div.list-container {
         position: absolute;
         top: 150px;

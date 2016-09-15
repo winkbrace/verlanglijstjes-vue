@@ -1,39 +1,28 @@
 header, footer {
     z-index: 3;
 }
-header {
-    height: 150px;
-    position: relative;
-}
-ul.head-nav li {
-    width: 100px;
-    position: absolute;
-    left: 0;
-    right: 0;
-    margin: 0 auto;
-}
 
 /* buttons */
 ul.list-group li.list-group-item.btn {
     background-color: transparent;
 }
 .blue, .color-gj, .color-gerda, .color-bas {
-    background: #2196f3;
+    background: $blue;
 }
 .green, .color-bob, .color-sepp, .color-lieselot {
-    background: #4caf50;
+    background: $green;
 }
 .orange, .color-hugo, .color-daan, .color-leanne {
-    background: #ff9800;
+    background: $orange;
 }
 .red, .color-noortje, .color-abel {
-    background: #f44336;
+    background: $red;
 }
 .pink {
-    background: #e91e63;
+    background: $pink;
 }
 .dblue {
-    background: #1976d2;
+    background: $darkblue;
 }
 .btn,
 button {
@@ -59,54 +48,59 @@ button:hover {
     display: block;
     width: 100px;
     height: 100px;
-    line-height: 90px;
+    line-height: 100px;
     border-radius: 50%;
-    color: #ffffff;
+    color: $white;
     text-align: center;
     text-decoration: none;
     font-weight: bold;
     box-shadow: 2px 2px 6px #CCCCCC;
     text-shadow: 0 1px 0 #064475;
 }
+
 .btn-add {
     position: absolute;
     bottom: 56px;
     right: 56px;
+
+    .fa {
+        font-size: 40px;
+    }
+
+    span {
+        position: absolute;
+        bottom: 18px;
+        left: 24px;
+        color: $white;
+    }
 }
-.btn-add .fa {
-    font-size: 40px;
-}
-.btn-add span {
-    position: absolute;
-    bottom: 18px;
-    left: 24px;
-    color: #ffffff;
-}
+
 .btn-home {
     position: absolute;
     bottom: 56px;
     left: 56px;
+    .fa {
+        font-size: 40px;
+    }
+    span {
+        position: absolute;
+        bottom: 18px;
+        left: 31px;
+        color: $white;
+    }
 }
-.btn-home .fa {
-    font-size: 40px;
-}
-.btn-home span {
-    position: absolute;
-    bottom: 18px;
-    left: 31px;
-    color: #ffffff;
-}
+
 .btn-login {
     position: relative;
-}
-.btn-login .fa {
-    font-size: 40px;
-}
-.btn-login span {
-    position: absolute;
-    bottom: 28px;
-    left: 33px;
-    color: #ffffff;
+    .fa {
+        font-size: 40px;
+    }
+    span {
+        position: absolute;
+        bottom: 28px;
+        left: 33px;
+        color: $white;
+    }
 }
 
 /* --------------------------------------------------------- Desktop bigger than 800 */

@@ -18,23 +18,7 @@
 </head>
 <body id="container">
 
-	<header>
-		<h1>Verlanglijstjes</h1>
-		<a class="awesome" href="{{ url('/') }}"><i class="fa fa-gift"></i></a>
-
-        <ul class="head-nav">
-            @if (Auth::guest())
-                <li class="btn btn-login">
-                    <span>Inloggen</span>
-                    <a class="btn-main green" href="{{ url('/login') }}"><i class="fa fa-user"></i></a>
-                </li>
-            @else
-                <li class="btn btn-login">
-                    <a class="btn-main color-{{ strtolower($username) }}" href="/list/{{ $username }}">{{ $username }}</a>
-                </li>
-            @endif
-        </ul>
-	</header>
+	<wishlist-header username="{{ $username }}"></wishlist-header>
 
 	<section class="content">
         @yield('content')
@@ -47,9 +31,8 @@
         </div>
         @endif
 
-        @if (Auth::check())
-        <!--Bas laat deze knop staan eerst wil ik testen wat we hier doen -->
-        <div class="btn-add"><span>Cadeaux</span>
+        @if ($isCurrentUserWishList)
+        <div class="btn-add"><span>Cadeau</span>
             <a class="btn btn-main pink"><i class="fa fa-plus"></i></a>
         </div>
 

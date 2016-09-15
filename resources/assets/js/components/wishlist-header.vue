@@ -1,0 +1,65 @@
+<template>
+    <header class="dblue">
+        <h1>
+            Verlanglijstjes
+            <a class="awesome" href="/"><i class="fa fa-gift"></i></a>
+        </h1>
+
+        <ul class="head-nav">
+            <li class="btn btn-login" v-show="loggedIn">
+                <a class="btn-main color-{{ username | lowercase }}" href="/list/{{ username }}">{{ username }}</a>
+            </li>
+            <li class="btn btn-login" v-else>
+                <span>Inloggen</span>
+                <a class="btn-main green" href="/login"><i class="fa fa-user"></i></a>
+            </li>
+        </ul>
+    </header>
+</template>
+
+<style type="text/css" lang="sass" scoped>
+    @import '../../sass/variables.scss';
+
+    h1 {
+        margin: 0;
+        padding: 5px;
+        font-weight: bold;
+
+        a {
+            position: absolute;
+            right: 5px;
+            font-size: 4em;
+            color: $white;
+
+            i {
+                color: $body-bg;
+            }
+        }
+    }
+
+    header {
+        height: 110px;
+        margin-bottom: 50px;
+        position: relative;
+        background-color: $darkblue;
+        color: $white;
+    }
+    ul li {
+        width: 100px;
+        position: absolute;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+    }
+</style>
+
+<script>
+    export default{
+        props: ['username'],
+        computed: {
+            loggedIn() {
+                return this.username.length > 0;
+            }
+        }
+    }
+</script>
