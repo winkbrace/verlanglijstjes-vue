@@ -1,11 +1,14 @@
 <?php
 
-Route::get('/', 'WebController@index');
-Route::get('/list/{name}', 'WebController@wishList');
+Route::group(['middleware' => 'set-view-variables'], function () {
 
-Route::get('test', 'WebController@test');
+    Route::get('/', 'WebController@index');
+    Route::get('/list/{name}', 'WebController@wishList');
 
-Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');
-Route::post('login', 'Auth\LoginController@login');
-Route::post('logout', 'Auth\LoginController@logout');
+    Route::get('test', 'WebController@test');
 
+    Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');
+    Route::post('login', 'Auth\LoginController@login');
+    Route::get('logout', 'Auth\LoginController@logout');
+
+});

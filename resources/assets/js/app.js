@@ -14,6 +14,8 @@ require('./bootstrap');
  */
 
 Vue.component('member-list', require('./components/member-list.vue'));
+Vue.component('wish-list', require('./components/wish-list.vue'));
+Vue.component('logout-bar', require('./components/logout-bar.vue'));
 
 const app = new Vue({
     el: 'body'
