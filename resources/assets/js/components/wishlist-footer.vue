@@ -1,6 +1,6 @@
 <template>
     <footer>
-        <div class="btn-home" v-show="this.atHomePage"> <span>Home</span>
+        <div class="btn-home" v-show="! this.atHomePage"> <span>Home</span>
             <a class="btn btn-main green" href="/"><i class="fa fa-home"></i></a>
         </div>
 
