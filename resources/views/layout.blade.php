@@ -24,7 +24,7 @@
         @yield('content')
 	</section>
 
-    <wishlist-footer atHomePage="{{ URL::current() != url('/') }}" isCurrentUserWishList="{{ $isCurrentUserWishList }}"></wishlist-footer>
+    <wishlist-footer username="{{ $username }}" atHomePage="{{ URL::current() != url('/') }}" isCurrentUserWishList="{{ $isCurrentUserWishList }}"></wishlist-footer>
 
     <script src="{{ asset('js/app.js') }}"></script>
 </body>

@@ -17,6 +17,11 @@
 
     export default{
         props: ['atHomePage', 'username'],
+        computed: {
+            loggedIn() {
+                return this.username.length > 0;
+            }
+        },
         components: {
             'logout-bar': LogoutBar
         }
