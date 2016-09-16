@@ -18,9 +18,9 @@ class SetViewVariables
     {
         /** @var User $user */
         $user = \Auth::user();
-        view()->share('username', ! empty($user) ? $user->name : null);
+        view()->share('username', ! empty($user) ? $user->name : '');
 
-        view()->share('isCurrentUserWishList', false); // is set to true in WebController for current user
+        view()->share('isCurrentUserWishList', 0); // is set to true in WebController for current user
 
         return $next($request);
     }

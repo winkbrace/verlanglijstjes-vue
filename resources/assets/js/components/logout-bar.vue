@@ -1,6 +1,6 @@
 <template>
     <div>
-        <a href="/logout">
+        <a href="/logout" v-show="loggedIn">
             <i class="fa fa-sign-out" aria-hidden="true"></i> Uitloggen
         </a>
     </div>
@@ -21,3 +21,9 @@
         i { }
     }
 </style>
+
+<script>
+    export default {
+        props: ['logged-in']
+    }
+</script>

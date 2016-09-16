@@ -1,14 +1,14 @@
 <template>
     <footer>
-        <div class="btn-home" v-show="! this.atHomePage"> <span>Home</span>
+        <div class="btn-home" v-show="! atHomePage"> <span>Home</span>
             <a class="btn btn-main green" href="/"><i class="fa fa-home"></i></a>
         </div>
 
-        <div class="btn-add" v-show="this.isCurrentUserWishList"><span>Cadeau</span>
+        <div class="btn-add" v-show="isCurrentUserWishList"><span>Cadeau</span>
             <a class="btn btn-main pink"><i class="fa fa-plus"></i></a>
         </div>
 
-        <logout-bar v-show="loggedIn"></logout-bar>
+        <logout-bar logged-in="loggedIn"></logout-bar>
     </footer>
 </template>
 
@@ -16,7 +16,7 @@
     import LogoutBar from './logout-bar.vue';
 
     export default{
-        props: ['atHomePage', 'username'],
+        props: ['at-home-page', 'is-current-user-wish-list', 'username'],
         computed: {
             loggedIn() {
                 return this.username.length > 0;

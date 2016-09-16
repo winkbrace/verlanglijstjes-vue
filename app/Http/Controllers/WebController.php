@@ -13,7 +13,7 @@ class WebController extends Controller
     {
         return view('list')->with([
             'name' => $name,
-            'isCurrentUserWishList' => ! empty($user = \Auth::user()) && $user->name == $name
+            'isCurrentUserWishList' => (int) (! empty($user = \Auth::user()) && $user->name == $name)
         ]);
     }
 
