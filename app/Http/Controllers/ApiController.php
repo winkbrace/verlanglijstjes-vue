@@ -16,7 +16,6 @@ class ApiController extends Controller
         $user = User::where('name', $name)->firstOrFail();
 
         return $user->wishListItems()
-            ->orderBy('updated_at')
             ->orderBy('created_at')
             ->get(['id', 'user_id', 'description', 'link', 'claimed_by', 'updated_at']);
     }

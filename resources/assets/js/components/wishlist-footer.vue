@@ -8,7 +8,7 @@
             <a class="btn btn-main pink"><i class="fa fa-plus"></i></a>
         </div>
 
-        <logout-bar logged-in="loggedIn"></logout-bar>
+        <logout-bar :logged-in="loggedIn"></logout-bar>
     </footer>
 </template>
 

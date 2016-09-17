@@ -4,7 +4,7 @@
             <li class="list-group-item gift" v-for="wish in wishList">
                 {{ wish.description }}
                 <a class="link" href="{{ wish.link }}" target="_blank" v-show="wish.link"><i class="fa fa-link" aria-hidden="true"></i></a>
-                <wishlist-checkbox claimed="claimed(wish)" claimed-by-user="claimedByUser(wish)" v-show="currentUserId"></wishlist-checkbox>
+                <wishlist-checkbox :current-user-id="currentUserId" :wish="wish" v-show="currentUserId"></wishlist-checkbox>
             </li>
         </ul>
     </div>
@@ -66,12 +66,6 @@
                 }, (response) => {
                     console.log('Error fetching wishes: ' + response.body);
                 });
-            },
-            claimed(wish) {
-                return wish.user_id != this.currentUserId && wish.claimed_by;
-            },
-            claimedByUser(wish) {
-                return claimed && this.currentUserId == wish.claimed_by;
             }
         },
 

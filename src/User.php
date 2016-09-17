@@ -49,7 +49,7 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
      */
     public function wishListItems()
     {
-        return $this->hasMany(WishList::class, 'user_id');
+        return $this->hasMany(Wish::class, 'user_id');
     }
 
     /**
@@ -57,7 +57,7 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
      */
     public function claimesItems()
     {
-        return $this->hasMany(WishList::class, 'claimed_by');
+        return $this->hasMany(Wish::class, 'claimed_by');
     }
 
 }
