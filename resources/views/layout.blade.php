@@ -28,7 +28,6 @@
     <wishlist-footer
         username="{{ $username }}"
         :at-home-page="{{ Request::getPathInfo() == '/' ? 'true' : 'false' }}"
-        :is-current-user-wish-list="{{ $isCurrentUserWishList ? 'true' : 'false' }}"
     />
 
     <script src="{{ asset('js/app.js') }}"></script>

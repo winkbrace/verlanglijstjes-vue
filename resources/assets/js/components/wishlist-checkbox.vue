@@ -98,7 +98,7 @@
             },
             deleteWish() {
                 this.loading = true;
-                this.$http.get('/delete-wish/' + this.wish.id ).then((response) => {
+                this.$http.get('/wish/delete/' + this.wish.id ).then((response) => {
                     this.loading = false;
                     this.$dispatch('wish-was-deleted', this.wish);
                 }, (response) => {
