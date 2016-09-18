@@ -10,7 +10,8 @@ $pink: #e91e63;
 $yellow: #ffc533;
 
 // Body
-$body-bg: #f5f8fa;
+// $body-bg: #f5f8fa;
+$body-bg: $white;
 
 // Borders
 $laravel-border-color: darken($body-bg, 10%);

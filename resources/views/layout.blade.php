@@ -9,6 +9,7 @@
     <title>Verlanglijstjes</title>
 
     <link href="{{ asset('/css/app.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="/css/animate.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
 
     <!-- Scripts -->
@@ -18,7 +19,7 @@
 </head>
 <body id="container">
 
-	<wishlist-header username="{{ $username }}"></wishlist-header>
+	<wishlist-header username="{{ $username }}" list-owner="{{ $name or '' }}"></wishlist-header>
 
 	<section class="content">
         @yield('content')

@@ -1,8 +1,8 @@
 <template>
     <div>
-        <span @click="toggle" v-show="showCheckbox">
+        <span :class="{ 'animated rubberBand' : loading }" @click="toggle" v-show="showCheckbox">
             <img src="/img/checkmark.png" class="check" alt="&check;" v-show="claimedByUser" />
-            <img src="/img/crossmark.svg" class="cross" alt="X" v-show="claimedByOther" />
+            <img src="/img/crossmark.svg" class="cross" alt="&cross;" v-show="claimedByOther" />
         </span>
     </div>
 </template>
@@ -42,6 +42,13 @@
     export default {
         props: ['currentUserId', 'wish'],
 
+        data() {
+            return {
+                'loading': false,
+                'classCheck': 'check',
+            }
+        },
+
         computed: {
             showCheckbox() {
                 return this.currentUserId && this.isNotOwnList;
@@ -62,9 +69,12 @@
 
         methods: {
             toggle() {
+                this.loading = true;
                 this.$http.get('/toggle-claim/' + this.wish.id ).then((response) => {
+                    this.loading = false;
                     this.wish = JSON.parse(response.body);
                 }, (response) => {
+                    this.loading = false;
                     console.log('Error toggling gift claim: ' + response.body);
                 });
             }

@@ -1,10 +1,11 @@
 <template>
-    <header class="dblue">
+    <header class="{{ headerColor | lowercase }}">
         <h1>
-            Verlanglijstjes
+            {{ title }}
             <a class="awesome" href="/"><i class="fa fa-gift"></i></a>
         </h1>
 
+        <div class="white-border"></div>
         <ul class="head-nav">
             <li class="btn btn-login" v-show="loggedIn">
                 <a class="btn-main color-{{ username | lowercase }}" href="/list/{{ username }}">{{ username }}</a>
@@ -41,11 +42,21 @@
         height: 110px;
         margin-bottom: 50px;
         position: relative;
-        background-color: $darkblue;
         color: $white;
     }
+    div.white-border {
+        width: 124px;
+        height: 124px;
+        position: absolute;
+        top: 43px;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+        background-color: $body-bg;
+        border-radius: 50%;
+    }
     ul li {
-        width: 100px;
+        width: 124px;
         position: absolute;
         left: 0;
         right: 0;
@@ -55,10 +66,16 @@
 
 <script>
     export default{
-        props: ['username'],
+        props: ['username', 'listOwner'],
         computed: {
             loggedIn() {
                 return this.username.length > 0;
+            },
+            title() {
+                return this.listOwner ? this.listOwner : 'Verlanglijstjes';
+            },
+            headerColor() {
+                return this.listOwner ? 'color-' + this.listOwner : 'dblue';
             }
         }
     }
