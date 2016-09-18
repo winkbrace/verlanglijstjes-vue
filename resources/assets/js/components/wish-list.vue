@@ -71,6 +71,12 @@
 
         components: {
             'wishlist-checkbox': WishlistCheckbox,
+        },
+
+        events: {
+            'wish-was-deleted': function(wish) {
+                this.wishList.$remove(wish);
+            }
         }
     }
 </script>

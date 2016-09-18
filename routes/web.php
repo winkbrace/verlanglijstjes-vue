@@ -6,6 +6,9 @@ Route::group(['middleware' => 'set-view-variables'], function () {
     Route::get('/', 'WebController@index');
     Route::get('/list/{name}', 'WebController@wishList');
 
+    Route::get('/wish/add/', 'WebController@addWish');
+    Route::get('/wish/edit/{wish}', 'WebController@editWish');
+
     Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');
     Route::post('login', 'Auth\LoginController@login');
     Route::get('logout', 'Auth\LoginController@logout');
@@ -16,5 +19,6 @@ Route::group(['middleware' => 'set-view-variables'], function () {
 Route::group(['middleware' => 'auth'], function () {
 
     Route::get('/toggle-claim/{wish}', 'AjaxController@toggleClaim');
+    Route::get('/delete-wish/{wish}', 'AjaxController@deleteWish');
 
 });

@@ -58,11 +58,18 @@ class Wish extends Model
         }
         // If wish is unclaimed it can only be claimed by someone who is not the owner of the wish
         // We have to use elseif, because otherwise the previous unclaim will always be immediately reverted here :)
-        elseif (! $this->isClaimed() && $this->user_id != $userId) {
+        elseif (! $this->isClaimed() && ! $this->isOwnedByCurrentUser()) {
             $this->claimed_by = $userId;
             $this->claimed_at = Carbon::now();
         }
 
         $this->save();
+    }
+
+    public function isOwnedByCurrentUser()
+    {
+        $userId = \Auth::user()->id;
+
+        return $this->user_id == $userId;
     }
 }

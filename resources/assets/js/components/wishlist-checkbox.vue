@@ -1,8 +1,12 @@
 <template>
     <div>
-        <span :class="{ 'animated rubberBand' : loading }" @click="toggle" v-show="showCheckbox">
+        <span :class="['checkbox', { 'animated rubberBand' : loading }]" @click="toggle" v-show="showCheckbox">
             <img src="/img/checkmark.png" class="check" alt="&check;" v-show="claimedByUser" />
             <img src="/img/crossmark.svg" class="cross" alt="&cross;" v-show="claimedByOther" />
+        </span>
+        <span class="edit">
+            <a href="/wish/edit/{{ wish.id }}"><img src="/img/edit.png" alt="Edit" v-show="ownsList" /></a>
+            <img src="/img/crossmark.svg" :class="{ 'animated rubberBand' : loading }" alt="Del" v-show="ownsList" @click="deleteWish" />
         </span>
     </div>
 </template>
@@ -16,7 +20,7 @@
         height: 40px;
         bottom: 30px;
 
-        span {
+        span.checkbox {
             display: block;
             margin-top: 16px;
             width: 28px;
@@ -35,6 +39,18 @@
             margin-top: -8px;
             margin-left: -6px;
         }
+
+        span.edit {
+            margin-top: 16px;
+            display: block;
+
+            img {
+                height: 32px;
+            }
+            img:hover {
+                cursor: pointer;
+            }
+        }
     }
 </style>
 
@@ -44,12 +60,14 @@
 
         data() {
             return {
-                'loading': false,
-                'classCheck': 'check',
+                'loading': false
             }
         },
 
         computed: {
+            ownsList() {
+                return this.currentUserId && ! this.isNotOwnList;
+            },
             showCheckbox() {
                 return this.currentUserId && this.isNotOwnList;
             },
@@ -76,6 +94,21 @@
                 }, (response) => {
                     this.loading = false;
                     console.log('Error toggling gift claim: ' + response.body);
+                });
+            },
+            deleteWish() {
+                this.loading = true;
+                this.$http.get('/delete-wish/' + this.wish.id ).then((response) => {
+                    this.loading = false;
+                    this.$dispatch('wish-was-deleted', this.wish);
+                }, (response) => {
+                    this.loading = false;
+                    if (response.status == 403) {
+                        // TODO implement pretty alert (bootstrap-sweetalert?)
+                        //this.$alert('You are no longer logged in.');
+                        alert('You are no longer logged in.');
+                    }
+                    console.log('Error deleting wish: ' + response.body);
                 });
             }
         }

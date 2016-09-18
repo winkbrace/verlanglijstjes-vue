@@ -1,7 +1,7 @@
 @extends('layout')
 
 @section('content')
-    <div class="row login-form">
+    <div class="row form-container">
         <form class="form-horizontal" role="form" method="POST" action="{{ url('/login') }}">
             {{ csrf_field() }}
 

@@ -20,6 +20,14 @@ Vue.component('wishlist-header', require('./components/wishlist-header.vue'));
 Vue.component('wishlist-footer', require('./components/wishlist-footer.vue'));
 Vue.component('wishlist-checkbox', require('./components/wishlist-checkbox.vue'));
 
+/*
+ * 3rd party vue plugins
+ */
+// TODO for some unclear reason this doesn't work. Delete or get working.
+// var VueAlert = require('vue-alert');
+// Vue.use(VueAlert);
+
+
 const app = new Vue({
     el: 'body'
 });

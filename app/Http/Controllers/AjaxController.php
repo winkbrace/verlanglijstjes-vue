@@ -12,4 +12,15 @@ class AjaxController extends Controller
 
         return $wish;
     }
+
+    public function deleteWish(Wish $wish)
+    {
+        if ($wish->isOwnedByCurrentUser()) {
+            $wish->delete();
+            return response('deleted');
+        } else {
+            $username = \Auth::user()->name;
+            return response("User $username is not allowed to delete wish of " . $wish->user()->name, 403);
+        }
+    }
 }
