@@ -5858,16 +5858,22 @@ button:hover {
     left: 33px;
     color: #ffffff; }
 
+.login-form {
+  padding: 25px;
+  margin-top: 30%; }
+
 /* --------------------------------------------------------- Desktop bigger than 800 */
 @media screen and (min-width: 800px) {
   .content {
     margin: 0 auto;
     float: none;
-    width: 800px; }
-  .btn-main {
+    width: 570px; }
+  .content .btn-main {
     width: 160px;
     height: 160px;
     line-height: 160px;
-    font-size: 24px; } }
+    font-size: 24px; }
+  .content .list-container {
+    width: 570px; } }
 
 /*# sourceMappingURL=app.css.map */
