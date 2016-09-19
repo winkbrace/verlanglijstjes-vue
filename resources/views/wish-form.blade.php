@@ -36,6 +36,7 @@
             <div class="form-group">
                 <div class="col-md-8 col-md-offset-4">
                     <button type="submit" class="btn btn-primary">{{ $buttonText }}</button>
+                    <a href="{{ URL::previous() }}" class="btn btn-default">Annuleren</a>
                 </div>
             </div>
         </form>
