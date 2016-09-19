@@ -5867,13 +5867,19 @@ button:hover {
   .content {
     margin: 0 auto;
     float: none;
-    width: 570px; }
+    width: 760px; }
   .content .btn-main {
     width: 160px;
     height: 160px;
     line-height: 160px;
     font-size: 24px; }
   .content .list-container {
-    width: 570px; } }
+    width: 760px; }
+  .color-bob {
+    background-color: #2196f3; }
+  .color-hugo, .color-daan {
+    background-color: #4caf50; }
+  .color-noortje, .color-abel {
+    background-color: #ff9800; } }
 
 /*# sourceMappingURL=app.css.map */

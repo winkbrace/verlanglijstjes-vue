@@ -2,8 +2,8 @@
     <header class="{{ headerColor | lowercase }}">
         <h1>
             {{ title }}
-            <a class="awesome" href="/"><i class="fa fa-gift"></i></a>
         </h1>
+        <a class="awesome" href="/"><i class="fa fa-gift"></i></a>
 
         <div class="white-border"></div>
         <ul class="head-nav">
@@ -25,16 +25,17 @@
         margin: 0;
         padding: 5px;
         font-weight: bold;
+    }
 
-        a {
-            position: absolute;
-            right: 5px;
-            font-size: 4em;
-            color: $white;
+    a.awesome {
+        position: absolute;
+        top: -30px;
+        right: 10px;
+        font-size: 10em;
+        color: $white;
 
-            i {
-                color: $body-bg;
-            }
+        i {
+            color: $body-bg;
         }
     }
 
@@ -58,9 +59,13 @@
     ul li {
         width: 124px;
         position: absolute;
+        top: 50px;
         left: 0;
         right: 0;
         margin: 0 auto;
+    }
+    @media screen and (min-width: 800px) {
+        h1 { padding: 30px 0 0 30px; }
     }
 </style>
 
