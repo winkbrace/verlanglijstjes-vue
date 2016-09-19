@@ -9,6 +9,6 @@ final class Application extends \Illuminate\Foundation\Application
 {
     public function publicPath()
     {
-        return realpath(__DIR__ . '/../../verlanglijstjes.famderuiter.com/');
+        return $this->basePath . '/../verlanglijstjes.famderuiter.com/';
     }
 }
