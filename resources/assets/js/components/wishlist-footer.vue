@@ -4,7 +4,7 @@
             <a href="/" class="btn btn-main green"><i class="fa fa-home"></i></a>
         </div>
 
-        <div class="btn-add" v-show="username"><span>Cadeau</span>
+        <div class="btn-add" v-show="showAddWishButton"><span>Cadeau</span>
             <a href="/wish/add" class="btn btn-main pink"><i class="fa fa-plus"></i></a>
         </div>
 
@@ -16,10 +16,13 @@
     import LogoutBar from './logout-bar.vue';
 
     export default{
-        props: ['at-home-page', 'username'],
+        props: ['at-home-page', 'username', 'listOwner'],
         computed: {
             loggedIn() {
                 return this.username.length > 0;
+            },
+            showAddWishButton() {
+                return this.atHomePage || this.username == this.listOwner;
             }
         },
         components: {

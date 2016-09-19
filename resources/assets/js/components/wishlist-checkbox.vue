@@ -5,8 +5,8 @@
             <img src="/img/crossmark.svg" class="cross" alt="&cross;" v-show="claimedByOther" />
         </span>
         <span class="edit">
-            <a href="/wish/edit/{{ wish.id }}"><img src="/img/edit.png" alt="Edit" v-show="ownsList" /></a>
-            <img src="/img/crossmark.svg" :class="{ 'animated rubberBand' : loading }" alt="Del" v-show="ownsList" @click="deleteWish" />
+            <a href="/wish/edit/{{ wish.id }}"><img src="/img/edit.png" title="Edit" alt="Edit" v-show="ownsList" /></a>
+            <img src="/img/crossmark.svg" :class="{ 'animated rubberBand' : loading }" title="Delete" alt="Del" v-show="ownsList" @click="deleteWish" />
         </span>
     </div>
 </template>

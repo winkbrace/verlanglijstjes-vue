@@ -6,7 +6,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>Verlanglijstjes</title>
+    <title>Verlanglijstje{{ $name ? ' van ' . $name : 's' }}</title>
 
     <link href="{{ asset('/css/app.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="/css/animate.min.css">
@@ -28,6 +28,7 @@
     <wishlist-footer
         username="{{ $username }}"
         :at-home-page="{{ Request::getPathInfo() == '/' ? 'true' : 'false' }}"
+        list-owner="{{ $name or '' }}"
     />
 
     <script src="{{ asset('js/app.js') }}"></script>
