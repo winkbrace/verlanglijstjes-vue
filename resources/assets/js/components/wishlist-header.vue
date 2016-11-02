@@ -2,9 +2,9 @@
     <header class="{{ headerColor | lowercase }}">
         <h1>
             {{ title }}
+            <a href="/letters" v-show="loggedIn"><img src="/img/mijter.png" alt="" /></a>
         </h1>
         <a class="awesome" href="/"><i class="fa fa-gift"></i></a>
-        <a href="/letters"><img src="/img/mijter.png" alt="" /></a>
 
         <div class="white-border"></div>
         <ul class="head-nav">
@@ -26,6 +26,14 @@
         margin: 0;
         padding: 5px;
         font-weight: bold;
+
+        img {
+            position: absolute;
+            left: 0;
+            top: 46px;
+            height: 90px;
+            transform: rotate(-15deg);
+        }
     }
 
     a.awesome {
@@ -38,11 +46,6 @@
         i {
             color: $body-bg;
         }
-    }
-
-    img {
-        height: 90px;
-        transform: rotate(-15deg);
     }
 
     header {
@@ -71,8 +74,10 @@
         margin: 0 auto;
     }
     @media screen and (min-width: 800px) {
-        h1 { padding: 30px 0 0 30px; }
-        img { margin-left: 30px; }
+        h1 {
+            padding: 30px 0 0 30px;
+            img { top: 76px; }
+        }
     }
 </style>
 

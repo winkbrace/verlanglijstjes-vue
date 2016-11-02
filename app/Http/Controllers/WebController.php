@@ -16,9 +16,9 @@ class WebController extends Controller
 
     public function letters()
     {
-        $letters = User::all()->pluck('chocolate_preference', 'name');
+        $letters = User::orderBy('order')->get()->pluck('chocolate_preference', 'name');
 
-        return view('letters')->with(compact('letters'));
+        return view('letters')->with(['letters' => $letters, 'title' => 'Chocoladeletters voorkeuren']);
     }
 
     public function wishList($name)

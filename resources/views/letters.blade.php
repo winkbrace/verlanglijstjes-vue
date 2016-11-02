@@ -2,8 +2,10 @@
 
 @section('content')
     <ul class="list-group">
-    @foreach ($letters as $name => $preference)
-        <li class="list-group-item">{{ $name }}: {{ $preference }}</li>
+    @foreach ($letters as $owner => $preference)
+        <li class="list-group-item">
+            <span style="display: inline-block; width: 80px;">{{ $owner }}:</span> {{ $preference }}
+        </li>
     @endforeach
     </ul>
 @endsection
