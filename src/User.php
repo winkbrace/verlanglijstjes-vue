@@ -53,7 +53,7 @@ class User extends Authenticatable
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
-    public function claimesItems()
+    public function claimedItems()
     {
         return $this->hasMany(Wish::class, 'claimed_by');
     }

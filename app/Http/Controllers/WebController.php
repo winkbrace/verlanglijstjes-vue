@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\CreateWishRequest;
 use App\Http\Requests\UpdateWishRequest;
+use Verlanglijstjes\User;
 use Verlanglijstjes\Wish;
 
 class WebController extends Controller
@@ -11,6 +12,13 @@ class WebController extends Controller
     public function index()
     {
         return view('home');
+    }
+
+    public function letters()
+    {
+        $letters = User::all()->pluck('chocolate_preference', 'name');
+
+        return view('letters')->with(compact('letters'));
     }
 
     public function wishList($name)

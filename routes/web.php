@@ -9,6 +9,7 @@ Route::group(['middleware' => 'set-view-variables'], function () {
     Route::get('/wish/add', 'WebController@addWish');
     Route::get('/wish/edit/{wish}', 'WebController@editWish');
 
+    Route::get('/letters', 'WebController@letters');
 
     Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');
     Route::post('login', 'Auth\LoginController@login');

@@ -4,6 +4,7 @@
             {{ title }}
         </h1>
         <a class="awesome" href="/"><i class="fa fa-gift"></i></a>
+        <a href="/letters"><img src="/img/mijter.png" alt="" /></a>
 
         <div class="white-border"></div>
         <ul class="head-nav">
@@ -39,6 +40,11 @@
         }
     }
 
+    img {
+        height: 90px;
+        transform: rotate(-15deg);
+    }
+
     header {
         height: 110px;
         margin-bottom: 50px;
@@ -66,6 +72,7 @@
     }
     @media screen and (min-width: 800px) {
         h1 { padding: 30px 0 0 30px; }
+        img { margin-left: 30px; }
     }
 </style>
 
