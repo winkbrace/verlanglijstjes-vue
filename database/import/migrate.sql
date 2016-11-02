@@ -1,6 +1,6 @@
-truncate table wish_lists;
+truncate table wishes;
 
-insert into wish_lists (user_id, description, link, claimed_by, claimed_at, created_at, updated_at, deleted_at)
+insert into wishes (user_id, description, link, claimed_by, claimed_at, created_at, updated_at, deleted_at)
 select u.id user_id
 ,      v.omschrijving description
 ,      ifnull(v.link, v.plaatje) link

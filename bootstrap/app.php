@@ -11,8 +11,8 @@
 |
 */
 
-$app = new Illuminate\Foundation\Application(
-    realpath(__DIR__.'/../')
+$app = new Verlanglijstjes\Application(
+    realpath(__DIR__ . '/../')
 );
 
 /*
