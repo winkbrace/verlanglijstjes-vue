@@ -6,16 +6,16 @@ header, footer {
 ul.list-group li.list-group-item.btn {
     background-color: transparent;
 }
-.blue, .color-gj, .color-gerda, .color-bas {
+.blue, .color-gj, .color-gerda {
     background: $blue;
 }
-.green, .color-bob, .color-sepp, .color-lieselot {
+.green, .color-bas, .color-dorien, .color-bob, .color-sepp, .color-thijs, .color-daantje {
     background: $green;
 }
-.orange, .color-hugo, .color-daan, .color-leanne {
+.orange, .color-lieselot, .color-hugo {
     background: $orange;
 }
-.red, .color-noortje, .color-abel {
+.red, .color-daan, .color-leanne, .color-noortje, .color-abel {
     background: $red;
 }
 .pink {
@@ -123,14 +123,5 @@ button:hover {
     }
     .content .list-container {
         width: 760px;
-    }
-    .color-gj, .color-gerda, .color-bas {
-        background-color: $green;
-    }
-    .color-sepp, .color-lieselot {
-        background-color: $orange;
-    }
-    .color-leanne {
-        background-color: $red;
     }
 }
