@@ -16,7 +16,6 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
  * @property Carbon created_at
  * @property Carbon updated_at
  */
-
 class User extends Authenticatable
 {
     use Notifiable;
@@ -57,5 +56,4 @@ class User extends Authenticatable
     {
         return $this->hasMany(Wish::class, 'claimed_by');
     }
-
 }
