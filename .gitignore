@@ -1,6 +1,7 @@
 /node_modules
 /public/storage
 /vendor
+composer.lock
 /.idea
 Homestead.json
 Homestead.yaml
