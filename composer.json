@@ -5,8 +5,8 @@
     "license": "MIT",
     "type": "project",
     "require": {
-        "php": ">=5.6.4",
-        "laravel/framework": "5.3.*"
+        "php": "^7.4",
+        "laravel/framework": "5.5.*"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",
@@ -14,7 +14,7 @@
         "phpunit/phpunit": "~5.0",
         "symfony/css-selector": "3.1.*",
         "symfony/dom-crawler": "3.1.*",
-        "barryvdh/laravel-ide-helper": "^2.2",
+        "barryvdh/laravel-ide-helper": "^2.8",
         "barryvdh/laravel-debugbar": "^2.2"
     },
     "autoload": {
@@ -50,6 +50,9 @@
         ]
     },
     "config": {
-        "preferred-install": "dist"
+        "preferred-install": "dist",
+        "platform": {
+            "php": "7.4"
+        }
     }
 }
